@@ -80,23 +80,34 @@ mod tests {
     }
 }
 
+/// Time complexity: O(log(min(n, m))) where n and m are the lengths of the two arrays.
+/// Space complexity: O(1).
 pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
+    // Ensure that nums1 is the smaller array
     if nums1.len() > nums2.len() {
         return find_median_sorted_arrays(nums2, nums1);
     }
+
     let m = nums1.len();
     let n = nums2.len();
     let half = (m + n + 1) / 2;
     let mut left = 0;
     let mut right = nums1.len();
+
+    // Binary search on nums1
     while left <= right {
         let i = (left + right) / 2;
         let j = half - i;
+
+        // Handle edge cases with sentinels
         let a_left = if i == 0 { i32::MIN } else { nums1[i - 1] };
         let a_right = if i == m { i32::MAX } else { nums1[i] };
         let b_left = if j == 0 { i32::MIN } else { nums2[j - 1] };
         let b_right = if j == n { i32::MAX } else { nums2[j] };
+
+        // Check if partition is correct
         if a_left <= b_right && b_left <= a_right {
+            // Calculate the median
             let max_of_left = a_left.max(b_left) as f64;
             if (m + n) % 2 == 1 {
                 return max_of_left;
@@ -105,11 +116,15 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
                 return (max_of_left + min_of_right) / 2.0;
             }
         }
+
+        // Adjust binary search range
         if a_left > b_right {
             right = i - 1;
         } else {
             left = i + 1;
         }
     }
+
+    // This code should never be reached if inputs are sorted
     unreachable!("Input arrays are not sorted or constraints violated");
 }

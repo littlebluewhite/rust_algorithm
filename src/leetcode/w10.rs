@@ -1,32 +1,35 @@
 pub fn is_match2(s: String, p: String) -> bool {
+    // 將輸入字串和 pattern 轉成 char 向量，方便用索引存取
     let s: Vec<char> = s.chars().collect();
     let p: Vec<char> = p.chars().collect();
     let m = s.len();
     let n = p.len();
 
-    // dp[i][j] = whether s[0..i] matches p[0..j]
+    // dp[i][j] 表示 s[0..i] 是否能被 p[0..j] 匹配
     let mut dp = vec![vec![false; n + 1]; m + 1];
+    // 初始條件：空字串和空 pattern 可以匹配
     dp[0][0] = true;
 
-    // Handle patterns like a*, a*b*, a*b*c* matching empty s
+    // 處理 pattern 形如 a*, a*b*, a*b*c* 能匹配空字串的情況
     for j in 1..=n {
         if p[j - 1] == '*' {
-            // '*' can eliminate its preceding element
+            // '*' 可以讓前一個字元消失
             dp[0][j] = dp[0][j - 2];
         }
     }
 
+    // 動態規劃填表
     for i in 1..=m {
         for j in 1..=n {
             if p[j - 1] == '*' {
-                // 1) treat '*' as matching zero of preceding element
+                // 1. '*' 當作前一個元素出現0次
                 dp[i][j] = dp[i][j - 2];
-                // 2) if preceding element matches s[i-1], consume one s-char
+                // 2. 如果前一個 pattern 字元能匹配當前 s 字元，則 '*' 可以消耗一個 s 字元
                 if matches_char(p[j - 2], s[i - 1]) {
                     dp[i][j] |= dp[i - 1][j];
                 }
             } else {
-                // direct match or '.' wildcard
+                // 非 '*',只要當前字元能匹配就繼承左上角的狀態
                 if matches_char(p[j - 1], s[i - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
                 }
@@ -35,6 +38,7 @@ pub fn is_match2(s: String, p: String) -> bool {
     }
     dbg!(&dp);
 
+    // 回傳最終結果
     dp[m][n]
 }
 
@@ -75,34 +79,43 @@ mod tests {
 }
 
 pub fn is_match(s: String, p: String) -> bool {
+    // 將輸入字串和 pattern 轉成 char 向量，方便用索引存取
     let s: Vec<char> = s.chars().collect();
     let p: Vec<char> = p.chars().collect();
     let m = s.len();
     let n = p.len();
+    // dp[i][j] 表示 s[0..i] 是否能被 p[0..j] 匹配
     let mut dp = vec![vec![false; n + 1]; m + 1];
-    //initial
+    // 初始條件：空字串和空 pattern 可以匹配
     dp[0][0] = true;
 
+    // 處理 pattern 形如 a*, a*b*, a*b*c* 能匹配空字串的情況
     for j in 1..=n {
         if p[j - 1] == '*' {
+            // '*' 可以讓前一個字元消失
             dp[0][j] = dp[0][j - 2];
         }
     }
 
+    // 動態規劃填表
     for i in 1..=m {
         for j in 1..=n {
             if p[j - 1] == '*' {
+                // 1. '*' 當作前一個元素出現0次
                 dp[i][j] = dp[i][j - 2];
+                // 2. 如果前一個 pattern 字元能匹配當前 s 字元，則 '*' 可以消耗一個 s 字元
                 if match_char2(s[i - 1], p[j - 2]) {
                     dp[i][j] |= dp[i - 1][j]
                 }
             } else {
+                // 非 '*',只要當前字元能匹配就繼承左上角的狀態
                 if match_char2(s[i - 1], p[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1]
                 }
             }
         }
     }
+    // 回傳最終結果
     dp[m][n]
 }
 
