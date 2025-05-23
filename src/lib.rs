@@ -5,9 +5,10 @@ use std::fs;
 
 // 匯入 leetcode 子模組，並公開三個子模組：w4, w10, w23。
 mod leetcode{
-    pub mod w4;   // week 4 的題目與解答
-    pub mod w10;  // week 10 的題目與解答
-    pub mod w23;  // week 23 的題目與解答
+    pub mod w4;
+    pub mod w10;
+    pub mod w23;
+    pub mod w25;
 }
 
 pub struct Config {
