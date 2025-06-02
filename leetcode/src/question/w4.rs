@@ -1,4 +1,3 @@
-
 fn find_median_sorted_arrays2(mut a: Vec<i32>, mut b: Vec<i32>) -> f64 {
     // Ensure a is the smaller array
     if a.len() > b.len() {

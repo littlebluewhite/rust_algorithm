@@ -3,5 +3,17 @@
 version = 4
 
 [[package]]
-name = "rust_test"
+name = "book"
 version = "0.1.0"
+
+[[package]]
+name = "leetcode"
+version = "0.1.0"
+
+[[package]]
+name = "rust_algorithm"
+version = "0.1.0"
+dependencies = [
+ "book",
+ "leetcode",
+]
