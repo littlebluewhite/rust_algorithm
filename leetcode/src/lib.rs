@@ -3,4 +3,5 @@ pub mod question{
     pub mod w10;
     pub mod w23;
     pub mod w25;
+    pub mod w30;
 }
