@@ -1,5 +1,5 @@
-use book::chapter::c15::{c15_main4};
+use book::chapter::c16::c16_1_main;
 
 fn main() {
-    c15_main4();
+    c16_1_main()
 }
