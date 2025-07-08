@@ -1,3 +1,4 @@
 /.idea/
 /target/
 .mcp.json
+/logs/
