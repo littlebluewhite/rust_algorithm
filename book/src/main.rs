@@ -1,5 +1,7 @@
-use book::chapter::c16::{c16_1_main, c16_2_main};
+extern crate core;
+
+use book::chapter::c16::{c16_3_main};
 
 fn main() {
-    c16_2_main()
+    c16_3_main()
 }
