@@ -1,10 +1,11 @@
-use leetcode::question::q3541::max_freq_sum;
+use leetcode::question::q996;
 
 fn main() {
-    let s1 = "successes".to_string();
-    println!("{}", max_freq_sum(s1)); // 輸出: 6
-
-    let s2 = "aeieiaia".to_string();
-    println!("{}", max_freq_sum(s2)); // 輸出: 3
-
+    let wordlist = vec!["KiTe".to_string(), "kite".to_string(), "hare".to_string(), "Hare".to_string()];
+    let queries = vec![
+        "kite".to_string(), "KiTe".to_string(), "HARE".to_string(),
+        "Hear".to_string(), "keti".to_string(), "keet".to_string(), "keto".to_string()
+    ];
+    let res = q996::spellchecker(wordlist, queries);
+    println!("{:?}", res);
 }
