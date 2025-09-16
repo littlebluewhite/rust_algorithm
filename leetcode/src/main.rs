@@ -1,11 +1,5 @@
-use leetcode::question::q996;
+use leetcode::question::q1935::can_be_typed_words;
 
 fn main() {
-    let wordlist = vec!["KiTe".to_string(), "kite".to_string(), "hare".to_string(), "Hare".to_string()];
-    let queries = vec![
-        "kite".to_string(), "KiTe".to_string(), "HARE".to_string(),
-        "Hear".to_string(), "keti".to_string(), "keet".to_string(), "keto".to_string()
-    ];
-    let res = q996::spellchecker(wordlist, queries);
-    println!("{:?}", res);
+    println!("{}", can_be_typed_words("hello world".to_string(), "ad".to_string()));
 }

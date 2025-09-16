@@ -6,4 +6,5 @@ pub mod question{
     pub mod w30;
     pub mod q3541;
     pub mod q996;
+    pub mod q1935;
 }
