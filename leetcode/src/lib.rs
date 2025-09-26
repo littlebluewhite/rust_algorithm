@@ -16,4 +16,5 @@ pub mod question{
     pub mod q165;
     pub mod q166;
     pub mod q120;
+    pub mod q611;
 }
