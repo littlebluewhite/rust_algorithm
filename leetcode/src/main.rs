@@ -1,5 +1,5 @@
-use leetcode::question::q3484::Spreadsheet;
+use leetcode::question::q1039::min_score_triangulation;
 
 fn main() {
-    let a = Spreadsheet::new(2);
+    println!("{:?}", min_score_triangulation(vec![1,2,3]));
 }
