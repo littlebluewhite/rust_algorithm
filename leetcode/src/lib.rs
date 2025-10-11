@@ -28,4 +28,5 @@ pub mod question{
     pub mod q2300;
     pub mod aq417;
     pub mod q3494;
+    pub mod q3147;
 }
