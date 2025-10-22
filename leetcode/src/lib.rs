@@ -37,4 +37,5 @@ pub mod question{
     pub mod q3397;
     pub mod q1625;
     pub mod q2011;
+    pub mod q3346_and_q3347;
 }
