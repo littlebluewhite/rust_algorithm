@@ -10,7 +10,7 @@ pub fn pacific_atlantic(heights: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let dirs = [(1,0), (-1,0), (0,1), (0,-1)];
 
     // 小工具：從多個起點做一次 BFS（只走到高度 >= 當前高度的格子）
-    let mut bfs = |starts: Vec<(usize, usize)>| -> Vec<Vec<bool>> {
+    let bfs = |starts: Vec<(usize, usize)>| -> Vec<Vec<bool>> {
         let mut vis = vec![vec![false; n]; m];
         let mut q = VecDeque::new();
 
