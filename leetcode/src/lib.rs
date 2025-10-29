@@ -44,4 +44,5 @@ pub mod question{
     pub mod q2043;
     pub mod q2125;
     pub mod q3354;
+    pub mod q3370;
 }
