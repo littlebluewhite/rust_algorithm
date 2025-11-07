@@ -50,6 +50,6 @@ pub mod question{
     pub mod q3217;
     pub mod q2257;
     pub mod q1578;
-    pub mod q3318;
-    pub mod q3321;
+    pub mod q3318_q3321;
+    pub mod q3607;
 }
