@@ -1,5 +1,5 @@
-use leetcode::question::q3234::number_of_substrings;
+use leetcode::question::q1513::num_sub;
 
 fn main() {
-    println!("{}", number_of_substrings("00110".to_string()));
+    println!("{}", num_sub("0110111".to_string()));
 }
