@@ -1,5 +1,5 @@
-use leetcode::question::q1039::min_score_triangulation;
+use leetcode::question::q3234::number_of_substrings;
 
 fn main() {
-    println!("{:?}", min_score_triangulation(vec![1,2,3]));
+    println!("{}", number_of_substrings("00110".to_string()));
 }
