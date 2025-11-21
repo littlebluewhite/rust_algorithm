@@ -77,7 +77,7 @@ pub fn c17_2_main_2() {
         let tx_fut = async move {
             let vals = vec![
                 String::from("more"),
-                String::from("messages"),
+                String::from("messages"), 
                 String::from("for"),
                 String::from("you"),
             ];
@@ -90,4 +90,8 @@ pub fn c17_2_main_2() {
 
         trpl::join3(tx1_fut, tx_fut, rx_fut).await;
     });
+
+    pub fn c17_3_main(){
+
+    }
 }
