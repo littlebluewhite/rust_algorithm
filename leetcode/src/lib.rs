@@ -66,4 +66,5 @@ pub mod question{
     pub mod q757;
     pub mod q1930;
     pub mod q3190;
+    pub mod q1262;
 }
