@@ -1,9 +1,9 @@
 pub mod question{
-    pub mod w4;
-    pub mod w10;
-    pub mod w23;
-    pub mod w25;
-    pub mod w30;
+    pub mod q4;
+    pub mod q10;
+    pub mod q23;
+    pub mod q25;
+    pub mod q30;
     pub mod q3541;
     pub mod q996;
     pub mod q1935;
@@ -68,4 +68,5 @@ pub mod question{
     pub mod q3190;
     pub mod q1262;
     pub mod q1018;
+    pub mod q1015;
 }
