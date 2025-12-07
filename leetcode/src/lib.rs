@@ -78,4 +78,5 @@ pub mod question{
     pub mod q3623;
     pub mod q2211;
     pub mod q3432;
+    pub mod q1523;
 }
