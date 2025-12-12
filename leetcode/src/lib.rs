@@ -79,6 +79,7 @@ pub mod question{
     pub mod q2211;
     pub mod q3432;
     pub mod q1523;
+    pub mod q1925;
     pub mod q3578;
     pub mod q3625;
     pub mod q3583;
