@@ -1,5 +1,6 @@
-use leetcode::question::q3623::count_trapezoids;
+use leetcode::question::q2110::get_descent_periods;
+
 fn main() {
-    // Input: points = [[1,0],[2,0],[3,0],[2,2],[3,2]]
-    println!("{}", count_trapezoids(vec![vec![1,0],vec![2,0],vec![3,0],vec![2,2],vec![3,2]]));
+    // Input: prices = [3,2,1,4]
+    println!("{}", get_descent_periods(vec![3,2,1,4]));
 }
