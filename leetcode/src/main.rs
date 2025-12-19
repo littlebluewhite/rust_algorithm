@@ -1,6 +1,6 @@
-use leetcode::question::q2110::get_descent_periods;
+use leetcode::question::q3652::max_profit;
 
 fn main() {
-    // Input: prices = [3,2,1,4]
-    println!("{}", get_descent_periods(vec![3,2,1,4]));
+    // Input: prices = [4,2,8], strategy = [-1,0,1], k = 2
+    println!("{}", max_profit(vec![4,2,8], vec![-1,0,1], 2));
 }
