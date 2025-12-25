@@ -97,4 +97,6 @@ pub mod question{
     pub mod q955;
     pub mod q960;
     pub mod q2092;
+    pub mod aq2054;
+    pub mod q3074;
 }
