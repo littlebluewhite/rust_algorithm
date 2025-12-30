@@ -13,9 +13,9 @@ pub fn max_two_events(mut events: Vec<Vec<i32>>) -> i32 {
         let end = event[1];
         let val = event[2];
         let next_start = end + 1;
-        println!("event: {:?}", event);
+        // println!("event: {:?}", event);
         let j = lower_bound(&starts, next_start);
-        println!("j: {}", j);
+        // println!("j: {}", j);
         let sum_val = val + suffix_max[j];
         if sum_val > best {
             best = sum_val
