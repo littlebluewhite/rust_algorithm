@@ -1,7 +1,7 @@
 extern crate core;
 
-use book::chapter::c17::c17_3_4_main;
+use book::chapter::c17::c17_4_1;
 
 fn main() {
-    c17_3_4_main();
+    c17_4_1();
 }

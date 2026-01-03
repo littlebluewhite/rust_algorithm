@@ -2,6 +2,7 @@ use std::pin::{pin, Pin};
 use std::thread;
 use std::time::{Duration, Instant};
 use trpl::{Either, Html};
+use trpl::StreamExt;
 
 pub fn c17_main_1() {
     let args: Vec<String> = std::env::args().collect();
@@ -232,4 +233,16 @@ async fn timeout<F: Future>(
         Either::Left(output) => Ok(output),
         Either::Right(_) => Err(max_time),
     }
+}
+
+pub fn c17_4_1() {
+    trpl::run(async {
+        let values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let iter = values.iter().map(|n| n * 2);
+        let mut stream = trpl::stream_from_iter(iter);
+
+        while let Some(value) = stream.next().await {
+            println!("The value was: {value}");
+        }
+    });
 }
