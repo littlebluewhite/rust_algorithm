@@ -23,22 +23,23 @@ pub fn subtree_with_all_deepest(
 ) -> Option<Rc<RefCell<TreeNode>>> {
     dfs(root).1
 }
+
 fn dfs(node: Option<Rc<RefCell<TreeNode>>>) -> (i32, Option<Rc<RefCell<TreeNode>>>) {
     if node.is_none() {
         return (0, None);
     }
     let rc = node.unwrap();
     let (left, right) = {
-        let tree_node = rc.borrow();
-        (tree_node.left.clone(), tree_node.right.clone())
+        let n = rc.borrow();
+        (n.left.clone(), n.right.clone())
     };
-    let (depth_left, left_node) = dfs(left);
-    let (depth_right, right_node) = dfs(right);
-    if depth_left == depth_right {
-        (depth_right + 1, Some(rc))
-    } else if depth_left > depth_right {
-        (depth_left+1, left_node)
+    let (l_depth, l_node) = dfs(left);
+    let (r_depth, r_node) = dfs(right);
+    if l_depth == r_depth {
+        (l_depth + 1, Some(rc))
+    } else if r_depth > l_depth {
+        (r_depth + 1, r_node)
     } else {
-        (depth_right+1, right_node)
+        (l_depth + 1, l_node)
     }
 }
