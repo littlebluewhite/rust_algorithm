@@ -1,11 +1,7 @@
-use leetcode::question::q3453::separate_squares;
+use leetcode::question::q2975::maximize_square_area;
 
 fn main(){
-    // Input: squares = [[0,0,1],[2,2,1]]
-    // Output: 1.00000
-    println!("{:?}", separate_squares(vec![vec![0,0,1],vec![2,2,1]]));
-
-    // Input: squares = [[0,0,2],[1,1,1]]
-    // Output: 1.16667
-    println!("{:?}", separate_squares(vec![vec![0,0,2],vec![1,1,1]]));
+    // Input: m = 4, n = 3, hFences = [2,3], vFences = [2]
+    // Output: 4
+    println!("{}", maximize_square_area(6, 7, vec![2], vec![4]));
 }
