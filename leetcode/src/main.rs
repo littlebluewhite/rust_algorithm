@@ -1,4 +1,4 @@
-use leetcode::question::q3507::minimum_pair_removal;
+use leetcode::question::q3510::minimum_pair_removal;
 
 fn main(){
     // Input: nums = [5,2,3,1]
