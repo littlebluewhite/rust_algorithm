@@ -1,7 +1,7 @@
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
-pub fn minimum_pair_removal(mut nums: Vec<i32>) -> i32 {
+pub fn minimum_pair_removal(nums: Vec<i32>) -> i32 {
     let n = nums.len();
     let mut nums: Vec<i64> = nums.into_iter().map(|x| x as i64).collect();
     let mut pre: Vec<i32> = (0..n).map(|i| i as i32 - 1).collect();
