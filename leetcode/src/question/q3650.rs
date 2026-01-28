@@ -20,8 +20,13 @@ pub fn min_cost(n: i32, edges: Vec<Vec<i32>>) -> i64 {
     dist[0] = 0;
     heap.push(Reverse((0, 0)));
     while let Some(Reverse((s, index))) = heap.pop() {
-        let target: &Vec<(usize, i64)> = &adj[index];
-        for &(next, w) in target {
+        if s != dist[index] {
+            continue;
+        }
+        if index == n - 1 {
+            break;
+        }
+        for &(next, w) in &adj[index]{
             let new_cost = s + w;
             if new_cost < dist[next] {
                 dist[next] = new_cost;
