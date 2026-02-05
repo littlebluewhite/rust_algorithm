@@ -137,4 +137,7 @@ pub mod question{
     pub mod q744;
     pub mod q3010;
     pub mod q3637;
+    pub mod q2997;
+    pub mod q3640;
+    pub mod q3379;
 }
