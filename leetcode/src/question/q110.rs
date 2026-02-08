@@ -40,7 +40,7 @@ pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
       return -1
     }
     if (lh-rh).abs() > 1{
-      return -1
+      -1
     }else{
       lh.max(rh) + 1
     }
