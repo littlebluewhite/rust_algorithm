@@ -45,3 +45,23 @@ pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     }
     ans
 }
+
+pub fn sum_root_to_leaf_dfs(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    fn dfs(node: Option<Rc<RefCell<TreeNode>>>, cur: i32) -> i32{
+        if let Some(rc) = node{
+            let (val, left, right) = {
+                let nc = rc.borrow();
+                (nc.val, nc.left.clone(), nc.right.clone())
+            };
+            let next = (cur << 1) | val;
+            if left.is_none() && right.is_none(){
+                next
+            }else{
+                dfs(left, next) + dfs(right, next)
+            }
+        }else{
+            0
+        }
+    }
+    dfs(root, 0)
+}
