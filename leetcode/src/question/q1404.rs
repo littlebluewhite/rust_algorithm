@@ -12,5 +12,5 @@ pub fn num_steps(s: String) -> i32 {
             step += 1;
         }
     }
-    step + carry as i32
+    step + carry
 }
