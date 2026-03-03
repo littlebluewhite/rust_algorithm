@@ -164,4 +164,5 @@ pub mod question{
     pub mod q1680;
     pub mod q1536;
     pub mod aq3666;
+    pub mod q1545;
 }
