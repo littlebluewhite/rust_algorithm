@@ -191,4 +191,5 @@ pub mod question{
     pub mod q2946;
     pub mod q2839;
     pub mod q2840;
+    pub mod q2573;
 }
