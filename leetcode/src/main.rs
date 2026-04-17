@@ -1,10 +1,10 @@
-use leetcode::question::q3488::solve_queries;
+use leetcode::question::q3761::min_mirror_pair_distance;
 
 fn main() {
-    // Input: nums = [1,3,1,4,1,3,2], queries = [0,3,5]
-    // Output: [2,-1,3]
+    // Input: nums = [2, 6]
+    // Output: -1
     println!(
         "{:?}",
-        solve_queries(vec![1, 3, 1, 4, 1, 3, 2], vec![0, 3, 5])
+        min_mirror_pair_distance(vec![2, 6])
     );
 }
