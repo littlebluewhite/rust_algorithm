@@ -4,8 +4,9 @@ pub fn two_edit_words(queries: Vec<String>, dictionary: Vec<String>) -> Vec<Stri
     // let mut ans: Vec<String> = Vec::with_capacity(qn);
     // for i in 0..qn{
     //     for j in 0.. dn{
-    //         if within_tow_edit(queries[i].as_bytes(), dictionary[i].as_bytes()){
-    //             ans.push(queries[i].clone())
+    //         if within_tow_edit(queries[i].as_bytes(), dictionary[j].as_bytes()){
+    //             ans.push(queries[i].clone());
+    //             break;
     //         }
     //     }
     // }
