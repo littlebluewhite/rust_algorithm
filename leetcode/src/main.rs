@@ -1,10 +1,13 @@
-use leetcode::question::q3761::min_mirror_pair_distance;
+use leetcode::question::q1391::has_valid_path;
 
 fn main() {
-    // Input: nums = [2, 6]
-    // Output: -1
-    println!(
-        "{:?}",
-        min_mirror_pair_distance(vec![2, 6])
-    );
+    // Input: grid = [[2,4,3],[6,5,2]]
+    // Output: true
+    println!("{:?}", has_valid_path(vec![vec![2, 4, 3], vec![6, 5, 2]]));
+    // Input: grid = [[4,1,3],[6,1,2]]
+    // Output: true
+    println!("{:?}", has_valid_path(vec![vec![4, 1, 3], vec![6, 1, 2]]));
+    // Input: grid = [[4,3,3],[6,5,2]]
+    // Output: false
+    println!("{:?}", has_valid_path(vec![vec![4, 3, 3], vec![6, 5, 2]]));
 }
