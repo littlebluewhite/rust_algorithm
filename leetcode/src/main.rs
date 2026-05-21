@@ -1,7 +1,7 @@
-use leetcode::question::q2033::min_operations;
+use leetcode::question::q3043::longest_common_prefix;
 
 fn main() {
-    // Input: grid = [[146]], x = 86
-    // Output: -1
-    println!("{:?}", min_operations(vec![vec![146]], 86));
+    // Input: arr1 = [1,10,100], arr2 = [1000]
+    // Output: 3
+    println!("{:?}", longest_common_prefix(vec![1,10,100], vec![1000]));
 }
