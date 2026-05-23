@@ -1,7 +1,7 @@
-use leetcode::question::q3043::longest_common_prefix;
+use leetcode::question::q1752::check;
 
 fn main() {
-    // Input: arr1 = [1,10,100], arr2 = [1000]
-    // Output: 3
-    println!("{:?}", longest_common_prefix(vec![1,10,100], vec![1000]));
+    // Input: nums = [1,2,3]
+    // Output: true
+    println!("{:?}", check(vec![1,2,3]));
 }
