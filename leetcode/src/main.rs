@@ -1,7 +1,7 @@
-use leetcode::question::q1871::can_reach;
+use leetcode::question::q3120::number_of_special_chars;
 
 fn main() {
-    // Input: s = "00111010", minJump = 3, maxJump = 5
-    // Output: true
-    println!("{:?}", can_reach("00111010".to_string(), 3, 5));
+    // Input: word = "aaAbcBC"
+    // Output: 3
+    println!("{:?}", number_of_special_chars("aaAbcBC".to_string()));
 }
