@@ -1,7 +1,7 @@
-use leetcode::question::q3120::number_of_special_chars;
+use leetcode::question::q3121::number_of_special_chars;
 
 fn main() {
-    // Input: word = "aaAbcBC"
-    // Output: 3
-    println!("{:?}", number_of_special_chars("aaAbcBC".to_string()));
+    // Input: word = "cCceDC"
+    // Output: 0
+    println!("{:?}", number_of_special_chars("cCceDC".to_string()));
 }
