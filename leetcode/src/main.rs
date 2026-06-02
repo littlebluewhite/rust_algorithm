@@ -1,7 +1,7 @@
-use leetcode::question::q3093::string_indices;
+use leetcode::question::q3633::earliest_finish_time;
 
 fn main() {
-    // Input: wordsContainer = ["abcde","abcde"], wordsQuery = ["abcde","bcde","cde","de","e"]
-    // Output: [1,1,1,1,1]
-    println!("{:?}", string_indices(vec!["abcde".to_string(), "abcde".to_string()], vec!["abcde".to_string(), "bcde".to_string(), "cde".to_string(), "de".to_string(), "e".to_string()]));
+    // Input: landStartTime = [2,8], landDuration = [4,1], waterStartTime = [6], waterDuration = [3]
+    // Output: 9
+    println!("{:?}", earliest_finish_time(vec![2, 8], vec![4, 1], vec![6], vec![3]));
 }
