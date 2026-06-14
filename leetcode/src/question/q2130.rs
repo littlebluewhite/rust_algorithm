@@ -16,7 +16,6 @@ impl ListNode {
 }
 
 pub fn pair_sum(mut head: Option<Box<ListNode>>) -> i32 {
-    let mut max = 0;
     let mut n = 0;
     let mut cur = head.as_ref();
     while let Some(node) = cur {
