@@ -7,7 +7,7 @@ pub fn process_str(s: String) -> String {
                 bytes.push(i);
             }
             b'#' => {
-                bytes.extend(bytes.clone());
+                bytes.extend_from_within(0..bytes.len());
             }
             b'%' => {
                 bytes.reverse();
