@@ -1,7 +1,15 @@
-use leetcode::question::q3700::zig_zag_arrays;
+use leetcode::question::q2812::maximum_safeness_factor;
 
 fn main() {
-    // Input: n = 8, l = 2, r = 4
-    // Output: 110
-    println!("{:?}", zig_zag_arrays(8, 2, 4));
+    // Input: grid = [[0,0,0,1],[0,0,0,0],[0,0,0,0],[1,0,0,0]]
+    // Output: 2
+    println!(
+        "{:?}",
+        maximum_safeness_factor(vec![
+            vec![0, 0, 0, 1],
+            vec![0, 0, 0, 0],
+            vec![0, 0, 0, 0],
+            vec![1, 0, 0, 0]
+        ])
+    );
 }
