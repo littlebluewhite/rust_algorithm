@@ -1,17 +1,13 @@
-use leetcode::question::q3286::find_safe_walk;
+use leetcode::question::q3756::sum_and_multiply;
 
 fn main() {
-    // Input: grid = [[0,1,0,0,0],[0,1,0,1,0],[0,0,0,1,0]], health = 1
-    // Output: true
+    // Input: s = "10203004", queries = [[0,7],[1,3],[4,6]]
+    // Output: [12340, 4, 9]
     println!(
         "{:?}",
-        find_safe_walk(
-            vec![
-                vec![0, 1, 0, 0, 0],
-                vec![0, 1, 0, 1, 0],
-                vec![0, 0, 0, 1, 0]
-            ],
-            1
+        sum_and_multiply(
+            "10203004".to_string(),
+            vec![vec![0, 7], vec![1, 3], vec![4, 6]]
         )
     );
 }
