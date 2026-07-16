@@ -296,4 +296,6 @@ pub mod question{
     pub mod q2685;
     pub mod q1331;
     pub mod q1291;
+    pub mod q3336;
+    pub mod q3658;
 }
