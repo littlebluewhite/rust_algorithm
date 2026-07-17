@@ -163,7 +163,7 @@ pub mod question{
     pub mod q1404;
     pub mod q1680;
     pub mod q1536;
-    pub mod aq3666;
+    pub mod q3666;
     pub mod q1545;
     pub mod q1582;
     pub mod q1758;
