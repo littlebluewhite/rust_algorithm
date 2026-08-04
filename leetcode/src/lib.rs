@@ -316,4 +316,6 @@ pub mod question{
     pub mod q3016;
     pub mod q486;
     pub mod q877;
+    pub mod q1406;
+    pub mod q3731;
 }
