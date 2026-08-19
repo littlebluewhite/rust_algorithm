@@ -1,7 +1,7 @@
-use leetcode::question::q3499::max_active_sections_after_trade;
+use leetcode::question::q1386::max_number_of_families;
 
 fn main() {
-    // Input: s = "01"
-    // Output: 1
-    println!("{:?}", max_active_sections_after_trade("01".to_string()));
+    // Input: n = 3, reservedSeats = [[1,2],[1,3],[1,8],[2,6],[3,1],[3,10]]
+    // Output: 4
+    println!("{:?}", max_number_of_families(3, vec![vec![1,2], vec![1,3], vec![1,8], vec![2,6], vec![3,1], vec![3,10]]));
 }
