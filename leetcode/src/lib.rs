@@ -336,4 +336,5 @@ pub mod question{
     pub mod q3069;
     pub mod q3116;
     pub mod q3622;
+    pub mod q1927;
 }
