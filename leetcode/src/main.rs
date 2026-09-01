@@ -1,7 +1,7 @@
-use leetcode::question::q2904::shortest_beautiful_substring;
+use leetcode::question::q3568::min_moves;
 
 fn main() {
-    // Input: s = "100011001", k = 3
-    // Output: "11001"
-    println!("{:?}", shortest_beautiful_substring("100011001".to_string(), 3));
+    // Input: classroom = ["RL", "SL", "LR"], energy = 2
+    // Output: 4
+    println!("{:?}", min_moves(vec!["RL".to_string(), "SL".to_string(), "LR".to_string()], 2));
 }
