@@ -4,7 +4,7 @@ pub fn evaluate(s: String, knowledge: Vec<Vec<String>>) -> String {
     let b = s.as_bytes();
     let n = b.len();
     let mut ans = String::with_capacity(s.len());
-    let mut map: HashMap<&str, &str> = knowledge
+    let map: HashMap<&str, &str> = knowledge
         .iter()
         .map(|v| (v[0].as_str(), v[1].as_str()))
         .collect();
