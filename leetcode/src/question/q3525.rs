@@ -19,7 +19,7 @@ struct Seg {
 }
 
 impl Seg {
-    fn identify(k: usize) -> Self {
+    fn identify() -> Self {
         Self {
             prod: 1,
             cnt: [0; MAX_K],
@@ -53,7 +53,7 @@ struct SegTree {
 impl SegTree {
     fn new(nums: &[i32], k: usize) -> Self {
         let size = nums.len().next_power_of_two();
-        let mut tree = vec![Seg::identify(k); size * 2];
+        let mut tree = vec![Seg::identify(); size * 2];
         for (i, &value) in nums.iter().enumerate() {
             tree[size + i] = Seg::leaf(value, k);
         }
@@ -75,8 +75,8 @@ impl SegTree {
     fn query(&self, mut left: usize, mut right: usize) -> Seg {
         left = left + self.size;
         right = right + self.size;
-        let mut head = Seg::identify(self.k);
-        let mut tail = Seg::identify(self.k);
+        let mut head = Seg::identify();
+        let mut tail = Seg::identify();
 
         while left < right {
             if left & 1 == 1 {
