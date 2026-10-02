@@ -1,11 +1,18 @@
 pub fn result_array(nums: Vec<i32>, k: i32, queries: Vec<Vec<i32>>) -> Vec<i64> {
-    let mut tree = SegTree::new(&nums, k as usize);
     let n = nums.len();
+    let k = k as usize;
+    let mut seg_tree = SegTree::new(&nums, k);
     queries
         .iter()
         .map(|query| {
-            tree.set(query[0] as usize, query[1]);
-            tree.query(query[2] as usize, n).cnt[query[3] as usize]
+            let (set_idx, set_value, start, r) = (
+                query[0] as usize,
+                query[1],
+                query[2] as usize,
+                query[3] as usize,
+            );
+            seg_tree.set(set_idx, set_value);
+            seg_tree.query(start, n).cnt[r]
         })
         .collect()
 }
@@ -26,17 +33,17 @@ impl Seg {
         }
     }
     fn leaf(value: i32, k: usize) -> Self {
-        let residue = value as usize % k;
+        let prod = value as usize % k;
         let mut cnt = [0; MAX_K];
-        cnt[residue] += 1;
-        Self { prod: residue, cnt }
+        cnt[prod] += 1;
+        Self { prod, cnt }
     }
 }
 
 fn concat(left: Seg, right: Seg, k: usize) -> Seg {
     let mut cnt = left.cnt;
-    for i in 0..k {
-        cnt[(left.prod * i) % k] += right.cnt[i];
+    for r in 0..k {
+        cnt[(left.prod * r) % k] += right.cnt[r];
     }
     Seg {
         prod: (left.prod * right.prod) % k,
@@ -63,21 +70,20 @@ impl SegTree {
         Self { size, k, tree }
     }
 
-    fn set(&mut self, index: usize, value: i32) {
-        let mut pos = self.size + index;
-        self.tree[pos] = Seg::leaf(value, self.k);
-        while pos > 1 {
-            pos /= 2;
-            self.tree[pos] = concat(self.tree[pos * 2], self.tree[pos * 2 + 1], self.k);
+    fn set(&mut self, idx: usize, value: i32) {
+        let mut index = idx + self.size;
+        self.tree[index] = Seg::leaf(value, self.k);
+        while index > 1 {
+            index /= 2;
+            self.tree[index] = concat(self.tree[index * 2], self.tree[index * 2 + 1], self.k);
         }
     }
 
     fn query(&self, mut left: usize, mut right: usize) -> Seg {
-        left = left + self.size;
-        right = right + self.size;
         let mut head = Seg::identify();
         let mut tail = Seg::identify();
-
+        left += self.size;
+        right += self.size;
         while left < right {
             if left & 1 == 1 {
                 head = concat(head, self.tree[left], self.k);
