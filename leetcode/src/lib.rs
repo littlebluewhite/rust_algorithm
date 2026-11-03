@@ -408,4 +408,5 @@ pub mod question{
     pub mod q453;
     pub mod q3970;
     pub mod q462;
+    pub mod q3736;
 }
