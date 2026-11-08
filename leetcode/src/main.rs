@@ -1,7 +1,7 @@
-use leetcode::question::q3568::min_moves;
+use leetcode::question::q1267::count_servers;
 
 fn main() {
-    // Input: classroom = ["RL", "SL", "LR"], energy = 2
-    // Output: 4
-    println!("{:?}", min_moves(vec!["RL".to_string(), "SL".to_string(), "LR".to_string()], 2));
+    // Input: grid = [[1,0],[0,1]]
+    // Output: 0
+    println!("{:?}", count_servers(vec![vec![1, 0], vec![0, 1]]));
 }
